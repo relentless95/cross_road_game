@@ -18,7 +18,7 @@ const myGameArea = {
     }
 }
 
-// const player = new Component(10, 10, "#50BEFA", 0, 110);
+const player = new Player(10, 10, "#50BEFA", 20, 110);
 myGameArea.start()
 
 for(let i = 0;i< 10; i++){
@@ -29,6 +29,9 @@ for(let i = 0;i< 10; i++){
 
 function updateGameArea(){
     myGameArea.clear(); //clear the canvas
+    // update the player's position before drawing
+    player.newPos();
+    player.update();
     for(let obstacle of myObstacles){
         obstacle.move();
         obstacle.draw(false);
