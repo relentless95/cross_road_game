@@ -1,6 +1,7 @@
 // DOM manipulation
 let startScreen = document.querySelector("#start-screen");
 let startButton = document.querySelector("#start-btn");
+let body = document.querySelector("body");
 
 let myObstacles = [];
 let animation_fps = 60;
@@ -9,8 +10,8 @@ const myGameArea = {
   canvas: document.querySelector("#canvas"),
   frames: 0, // don't know yet what its used for
   start: function () {
-    this.canvas.width = 480;
-    this.canvas.height = 270;
+    this.canvas.width = body.offsetWidth / 2; // used offsetWidth instead of innerWidth.
+    this.canvas.height = body.offsetHeight;
     this.context = this.canvas.getContext("2d");
     this.interval = setInterval(updateGameArea, 1000 / animation_fps);
   },
