@@ -2,20 +2,16 @@ class Obstacle {
   constructor(direction) {
     this.width = 10;
     this.height = rand(15, 100);
-    this.x = rand(40, myGameArea.canvas.width -10 , 10); // creating obstacles from pisiton 30 to 700 that are seperated by 10
+    this.x = rand(40, myGameArea.canvas.width - 10, 10); // creating obstacles from pisiton 30 to 700 that are seperated by 10
     this.y = 0;
     this.speed = rand(0.5, 5);
     this.direction = direction;
     this.level = 0; // initial level
   }
 
-  draw(dead) {
+  draw() {
     let ctx = myGameArea.context;
-    if (dead) {
-      ctx.fillStyle = "#800000";
-    } else {
-      ctx.fillStyle = "#D98D00";
-    }
+    ctx.fillStyle = "#D98D00";
     ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 

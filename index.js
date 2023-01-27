@@ -6,8 +6,8 @@ let restartButton = document.querySelector("#restart-btn");
 let gameOverScreen = document.querySelector("#gameover-screen");
 let levelIndicator = document.querySelector("#level");
 let gameAreaScreen = document.querySelector("#gameArea");
-let winScreen = document.querySelector("#win-screen")
-let replayButton = document.querySelector("#replay-btn")
+let winScreen = document.querySelector("#win-screen");
+let replayButton = document.querySelector("#replay-btn");
 
 let myObstacles = [];
 let level = 1;
@@ -48,16 +48,19 @@ function updateGameArea() {
   player.update();
   for (let obstacle of myObstacles) {
     obstacle.move();
-    obstacle.draw(false);
+    obstacle.draw();
   }
 
+  // when transitioning levels
   if (player.left() > myGameArea.canvas.width) {
     level += 1;
-    for(let i=0; i<10; i++){ // increasing the number of obstacles when the level increases
-    myObstacles.push(new Obstacle(randIndex(["up", "down"])))
+    for (let i = 0; i < 3; i++) {
+      // increasing the number of obstacles when the level increases
+      myObstacles.push(new Obstacle(randIndex(["up", "down"])));
     }
     myGameArea.reset();
-    if (level > 2) {
+    if (level > 5) {
+      // when winning
       gameAreaScreen.style.display = "none";
       gameOverScreen.style.display = "none";
       winScreen.style.display = "block";
@@ -107,6 +110,7 @@ function checkGameOver() {
 startButton.addEventListener("click", () => {
   gameAreaScreen.style.display = "block";
   startScreen.style.display = "none";
+  myGameArea.reset();
 });
 
 //restart the game
@@ -116,13 +120,13 @@ restartButton.addEventListener("click", () => {
 });
 
 //replay the game
-replayButton.addEventListener("click",()=>{
+replayButton.addEventListener("click", () => {
   gameAreaScreen.style.display = "none";
   gameOverScreen.style.display = "none";
   winScreen.style.display = "none";
-  startScreen.style.display = "block"
-  myObstacles = []
+  startScreen.style.display = "block";
+  myObstacles = [];
   for (let i = 0; i < 10; i++) {
     myObstacles.push(new Obstacle(randIndex(["up", "down"])));
   }
-})
+});
