@@ -32,4 +32,17 @@ class Obstacle {
       }
     }
   }
+
+  left() {
+    return this.x;
+  }
+  right() {
+    return this.x + this.width;
+  }
+  top() {
+    return this.y;
+  }
+  bottom() {
+    return this.y + this.height;
+  }
 }

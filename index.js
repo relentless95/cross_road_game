@@ -39,7 +39,10 @@ function updateGameArea() {
     obstacle.move();
     obstacle.draw(false);
   }
+
+  checkGameOver();
 }
+
 let friction = 0.68;
 document.onkeydown = function (e) {
   switch (e.keyCode) {
@@ -62,6 +65,17 @@ document.onkeyup = function (e) {
   player.speedX = 0;
   player.speedY = 0;
 };
+
+// checking game over
+function checkGameOver() {
+  const crashed = myObstacles.some(function (obstacle) {
+    return player.crashWith(obstacle);
+  });
+
+  if (crashed) {
+    myGameArea.stop();
+  }
+}
 
 // start screen hide and display gamescreen
 startButton.addEventListener("click", () => {
