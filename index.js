@@ -8,7 +8,7 @@ const myGameArea = {
         this.canvas.width=480;
         this.canvas.height=270;
         this.context = this.canvas.getContext("2d");
-        // this.interval = setInterval(updateGameArea, 20);
+        this.interval = setInterval(updateGameArea, 20);
     },
     clear: function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -25,7 +25,17 @@ for(let i = 0;i< 10; i++){
     myObstacles.push(new Obstacle(randIndex(['up', 'down'])) )
 }
 
-for(let obstacle of myObstacles){
-    obstacle.draw(false)
-}
 
+
+function updateGameArea(){
+    myGameArea.clear(); //clear the canvas
+    for(let obstacle of myObstacles){
+        obstacle.move();
+        obstacle.draw(false);
+    
+    }
+
+    
+
+
+}

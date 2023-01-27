@@ -19,4 +19,21 @@ class Obstacle {
     }
     ctx.fillRect(this.x, this.y, this.width, this.height)
   }
+
+  move(){
+    if(this.direction === 'up'){
+      this.y -= this.speed;
+      if((this.y + this.height) < 0){
+        this.y = myGameArea.canvas.height + rand(10,350) // makes the obstacle  appear at the end of the canvas i.e top of the canvas plus a random distance. 
+      }
+    } else {
+      this.y += this.speed;
+      if(this.y > myGameArea.canvas.height){
+        this.y = 0 - rand(10, 350)
+      }
+
+
+    }
+  }
 }
+
