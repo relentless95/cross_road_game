@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8"/>
-        <meta http-equiv = "X-UA-Compatible" content ="IE=edge"/>
-        <meta http-equiv = "X-UA-Compatible" content="width=device-width, intial-scale=1.0"/>
-        <title>Cross road Game</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <canvas id="canvas" width="500" height="500">
-          <!-- <img src ="./images/link.png" alt="" id="myImg"> -->
-        </canvas>
-        <div id='start-screen'>
-            <div>
-                what is here
-            </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="width=device-width, intial-scale=1.0"
+    />
+    <title>Cross road Game</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link href="https://fonts.cdnfonts.com/css/games" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="start-screen">
+        Cross road game
+        <div id="instructions">
+          <p>
+            Use your arrow keys to move your player
+            <span class="material-symbols-outlined"> arrow_back </span>
+            <span class="material-symbols-outlined"> arrow_upward </span>
+            <span class="material-symbols-outlined"> arrow_right_alt </span>
+            <span class="material-symbols-outlined"> arrow_downward </span>
+          </p>
+          Good luck!
         </div>
-        <script src="./utils.js"> </script>
-        <script src="./classes/player.js"> </script>
-        <script src="./classes/obstacle.js"> </script>
-        <script src="./index.js"></script>
-    </body>
+        <button id="start-btn">Start</button>
+      </div>
+      <div><canvas id="canvas" width="500" height="500"></canvas></div>
+    </div>
+
+    <script src="./utils.js"></script>
+    <script src="./classes/player.js"></script>
+    <script src="./classes/obstacle.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
