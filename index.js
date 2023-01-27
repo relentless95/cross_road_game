@@ -1,5 +1,6 @@
 
 let myObstacles=[]
+let animation_fps = 60;
 
 const myGameArea = {
     canvas: document.querySelector("#canvas"),
@@ -8,7 +9,7 @@ const myGameArea = {
         this.canvas.width=480;
         this.canvas.height=270;
         this.context = this.canvas.getContext("2d");
-        this.interval = setInterval(updateGameArea, 20);
+        this.interval = setInterval(updateGameArea, 1000/animation_fps);
     },
     clear: function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -38,7 +39,31 @@ function updateGameArea(){
     
     }
 
-    
-
 
 }
+let friction = 0.68
+document.onkeydown = function(e) {
+    switch (e.keyCode) {
+      case 38: // up arrow
+        player.speedY -= 1 * friction;
+        break;
+      case 40: // down arrow
+        player.speedY += 1 * friction;
+        break;
+      case 37: // left arrow
+        player.speedX -= 1 * friction;
+        break;
+      case 39: // right arrow
+        player.speedX += 1 * friction;
+        break;
+    }
+  };
+  
+  document.onkeyup = function(e) {
+    player.speedX = 0;
+    player.speedY = 0;
+  };
+
+
+
+

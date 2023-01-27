@@ -7,7 +7,7 @@ class Player {
         this.y = y;
 
         this.speedX = 0;
-        this.speedY=0;
+        this.speedY= 0;
     }
 
     update() {
@@ -17,8 +17,8 @@ class Player {
       }
     
       newPos() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+        this.x += this.speedX
+        this.y += this.speedY
       }
     
       left() {
@@ -33,4 +33,6 @@ class Player {
       bottom() {
         return this.y + this.height;
       }
+
+
 }
