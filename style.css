@@ -10,7 +10,8 @@ body {
   justify-content: center;
 }
 
-#start-screen {
+#start-screen,
+#win-screen {
   padding: 50px;
   margin: 30px;
   align-items: center;
@@ -18,12 +19,17 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+#win-screen {
+  display: none;
+}
+
 #instructions {
   font-size: 20px;
 }
 
 #start-btn,
-#restart-btn {
+#restart-btn,
+#replay-btn {
   background-color: black;
   color: white;
   padding: 20px;
@@ -31,9 +37,12 @@ body {
   margin-top: 40px;
 }
 
+#gameArea {
+  display: none;
+}
+
 canvas {
   border: 1px solid black;
-  display: none;
 }
 
 #gameover-screen {
