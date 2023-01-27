@@ -42,4 +42,9 @@ class Player {
       this.left() > obstacle.right()
     );
   }
+
+  move(x, y) {
+    this.x = x;
+    this.y = y;
+  }
 }

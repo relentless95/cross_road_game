@@ -2,7 +2,7 @@ class Obstacle {
   constructor(direction) {
     this.width = 10;
     this.height = rand(15, 100);
-    this.x = rand(30, 700, 10); // creating obstacles from pisiton 30 to 700 that are seperated by 10
+    this.x = rand(40, 800, 10); // creating obstacles from pisiton 30 to 700 that are seperated by 10
     this.y = 0;
     this.speed = rand(0.5, 5);
     this.direction = direction;

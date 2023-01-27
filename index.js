@@ -2,18 +2,21 @@
 let startScreen = document.querySelector("#start-screen");
 let startButton = document.querySelector("#start-btn");
 let body = document.querySelector("body");
+let restartButton = document.querySelector("#restart-btn");
+let gameOverScreen = document.querySelector("#gameover-screen");
 
 let myObstacles = [];
 let animation_fps = 60;
 
+const player = new Player(10, 10, "#50BEFA", 20, 110);
 const myGameArea = {
   canvas: document.querySelector("#canvas"),
   frames: 0, // don't know yet what its used for
   start: function () {
     this.canvas.width = body.offsetWidth / 2; // used offsetWidth instead of innerWidth.
-    this.canvas.height = body.offsetHeight;
+    this.canvas.height = window.innerHeight / 2;
     this.context = this.canvas.getContext("2d");
-    this.interval = setInterval(updateGameArea, 1000 / animation_fps);
+    this.interval = setInterval(updateGameArea, 1000 / animation_fps); //!!
   },
   clear: function () {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -21,9 +24,12 @@ const myGameArea = {
   stop: function () {
     clearInterval(this.interval);
   },
+  reset: function () {
+    player.move(20, 110);
+    this.start();
+  },
 };
 
-const player = new Player(10, 10, "#50BEFA", 20, 110);
 myGameArea.start();
 
 for (let i = 0; i < 10; i++) {
@@ -73,6 +79,7 @@ function checkGameOver() {
   });
 
   if (crashed) {
+    gameOverScreen.style.display = "block"; // 'block' is used to show the button
     myGameArea.stop();
   }
 }
@@ -81,4 +88,10 @@ function checkGameOver() {
 startButton.addEventListener("click", () => {
   myGameArea.canvas.style.display = "block";
   startScreen.style.display = "none";
+});
+
+//restart the game
+restartButton.addEventListener("click", () => {
+  myGameArea.reset();
+  gameOverScreen.style.display = "none";
 });

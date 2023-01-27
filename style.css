@@ -35,3 +35,11 @@ canvas {
   border: 1px solid black;
   display: none;
 }
+
+#gameover-screen {
+  display: none;
+}
+
+#gameover-screen #instructions {
+  color: red;
+}
