@@ -9,8 +9,8 @@ Cross Road game is a game where the player controls the character (blue). The ob
 ## MVP
 
 - The cars must be able to move vertically in random up and down directions across the canvas and appear on the opposite side of the canvas. 
-- The character (blue) must be able to move to the right horizontally and appear on the other side of the left side of the canvas. 
-- Collision between the character and the obstacles end the game and the player ican restart the game. 
+- The character (blue) must be able to move to the right horizontally and appear on the left side of the canvas. 
+- Collision between the character and the obstacles ends the game and the player can restart the game. 
 - When the player wins the congratulations screen should appear and the player can restart the game.
 
 
@@ -64,19 +64,19 @@ randIndex(){}
 
 
 ## Task
-- index-write html, id tags, import fonts
+- index-write html, id tags, import game fonts
 - style-write styles and display flexbox
 - player-write the class constructor
 - index-create the game are and render the player on the canvas
 - obstacle-create obstacle class
-- utils-add random function for the obstcle ositons
+- utils-add random function for the obstcle positons
 - utils-add random function for the obstacles to be used in index.js
 - index-render the obstacles on the game
-- player - add collion functions left(), right() etc
+- player-add collion functions left(), right() etc..
 - index-start game button and screen
 - obstacles-add collision function
-- index-add collisions i.e game ove
-- index-in case no collision, increase the display objects
+- index-add collisions i.e game over
+- index-when there is no collision and the level increases, increase the display objects
 - index-winscreen
 - index-losescreen
 - index-restart
