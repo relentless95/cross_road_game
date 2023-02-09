@@ -3,7 +3,7 @@
 [Cross Road game](https://relentless95.github.io/cross_road_game/)
 
 ## Description
-Cross Road game is a game where the player controls the character (blue). The objective of the game is to help blue cross the road to unit with his family. The player has to avoid getting hit by obstacles(cars) in order to win. The game has 5 levels and the difficulty increases each level. The player wins the game by completing all 5 levels of the game.
+Cross Road game is a game where the player controls the character (blue). The objective of the game is to help blue cross the road to unite with his family. The player has to avoid getting hit by obstacles(cars) in order to win. The game has 5 levels and the difficulty increases each level. The player wins the game by completing all 5 levels of the game.
 
 
 ## MVP
