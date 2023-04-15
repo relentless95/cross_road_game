@@ -29,7 +29,7 @@ Cross Road game is a game where the player controls the character (blue). The ob
 - stop(){}
 - reset(){}
 - updateGameArea(){}
-- checkGameover(){}
+- checkGameOver(){}
   
 ### player.js
 - player{}

@@ -59,16 +59,17 @@ function updateGameArea() {
       myObstacles.push(new Obstacle(randIndex(["up", "down"])));
     }
     myGameArea.reset();
-    if (level > 5) {
-      // when winning
-      gameAreaScreen.style.display = "none";
-      gameOverScreen.style.display = "none";
-      winScreen.style.display = "block";
-      level = 1;
-    }
   }
 
   checkGameOver();
+  if (level > 5) {
+    // when winning
+    myGameArea.stop()
+    gameAreaScreen.style.display = "none";
+    gameOverScreen.style.display = "none";
+    winScreen.style.display = "block";
+    level = 1;
+  }
 }
 
 let friction = 0.68;
